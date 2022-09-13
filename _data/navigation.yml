@@ -1,0 +1,30 @@
+# main links
+main:
+  - title: "About"
+    url: /about/
+  - title: "Category"
+    url: /category/
+  - title: "Tag"
+    url: /tag/
+  - title: "Search"
+    url: /search/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+docs:
+  - title: "fisrt"
+    children:
+      - title: "Category"
+        url: /category/
+      - title: "Tag"
+        url: /tag/
+  - title: "second"
+    children:
+      - title: "Category"
+        url: /category/
+      - title: "Tag"
+        url: /tag/
