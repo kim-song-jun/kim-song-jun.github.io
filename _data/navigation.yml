@@ -1,12 +1,12 @@
 # main links
 main:
-  - title: "About"
+  - title: 'About'
     url: /about/
-  - title: "Category"
+  - title: 'Category'
     url: /category/
-  - title: "Tag"
+  - title: 'Tag'
     url: /tag/
-  - title: "Search"
+  - title: 'Search'
     url: /search/
   # - title: "Sample Posts"
   #   url: /year-archive/
@@ -16,15 +16,23 @@ main:
   #   url: /sitemap/
 
 docs:
-  - title: "fisrt"
+  - title: 'Tech'
     children:
-      - title: "Category"
-        url: /category/
-      - title: "Tag"
+      - title: 'Svelte'
+        url: /svelte/svelte/
+        category: 'Svelte'
+      - title: 'Tag'
         url: /tag/
-  - title: "second"
+  - title: 'Paper'
     children:
-      - title: "Category"
-        url: /category/
-      - title: "Tag"
-        url: /tag/
+      - title: 'Start-Up'
+        url: /startup/
+        category: 'startup'
+  - title: 'blog'
+    children:
+      - title: 'jekyll'
+        url: /jekyll/
+        category: 'jekyll'
+      - title: 'github'
+        url: /github/
+        category: 'github'
