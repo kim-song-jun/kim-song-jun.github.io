@@ -14,25 +14,24 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
-
-docs:
-  - title: 'Tech'
-    children:
-      - title: 'Svelte'
-        url: /svelte/svelte/
-        category: 'Svelte'
-      - title: 'Tag'
-        url: /tag/
-  - title: 'Paper'
-    children:
-      - title: 'Start-Up'
-        url: /startup/
-        category: 'startup'
-  - title: 'blog'
-    children:
-      - title: 'jekyll'
-        url: /jekyll/
-        category: 'jekyll'
-      - title: 'github'
-        url: /github/
-        category: 'github'
+# docs:
+#   - title: 'Tech'
+#     children:
+#       - title: 'Svelte'
+#         url: /svelte/svelte/
+#         category: 'Svelte'
+#       - title: 'Tag'
+#         url: /tag/
+#   - title: 'Paper'
+#     children:
+#       - title: 'Start-Up'
+#         url: /startup/
+#         category: 'startup'
+#   - title: 'blog'
+#     children:
+#       - title: 'jekyll'
+#         url: /jekyll/
+#         category: 'jekyll'
+#       - title: 'github'
+#         url: /github/
+#         category: 'github'
