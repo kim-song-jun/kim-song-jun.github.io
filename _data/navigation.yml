@@ -2,9 +2,15 @@
 main:
   - title: "About"
     url: /about/
+<<<<<<< HEAD
   - title: "Categories"
     url: /categories/
   - title: "Tag"
+=======
+  - title: 'Categories'
+    url: /categories/
+  - title: 'Tag'
+>>>>>>> 446caa748100be32401d12ed4862bfda6a074738
     url: /tag/
   - title: "Search"
     url: /search/
