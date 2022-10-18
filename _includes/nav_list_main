@@ -52,6 +52,16 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+        
+        <span class="nav__sub-title">대학수업</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "humanpsychology" %}
+                        <li><a href="/categories/humanpsychology" class="">Human Psychology ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
         <span class="nav__sub-title">etc.</span>
             <ul>
                 {% for category in site.categories %}
