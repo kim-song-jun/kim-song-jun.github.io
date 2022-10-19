@@ -61,6 +61,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "urbananthropology" %}
+                        <li><a href="/categories/urbananthropology" class="">Urban Anthropology ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
 
         <span class="nav__sub-title">etc.</span>
             <ul>
