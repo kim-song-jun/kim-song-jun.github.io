@@ -533,7 +533,7 @@ after
 - Jsp의 문제점
   - 데이터를 반복해서 출력하거나, 조건을 체크해야 하는 경우 단순 HTML 문법만 가지고는 처리할 수 없기 때문에 java 코드 필요
   
-  ```JSP
+  ```jsp
   <table>
     <% for(Member m : mlist) { %>
       <tr>
@@ -663,7 +663,8 @@ request와 response는 session, application과 함께 JSP의 내장 객체이기
 
 - 두 수를 더하여 출력하는 프로그램
   - 입력 폼을 가진 html 파일 만들기
-  ```html
+  
+  ```js
   <form action=/jspbook/adder>
     first: <input type=text name=num1>
     second: <input type=text name=num2>
@@ -751,7 +752,8 @@ int num2 = Integer.parseInt(str2);
   }
   ```
 - 결과를 받는 Addresult.jsp
-  ```JSP
+
+  ```jsp
   <% 
     int num1 = (Inteer)request.getAttribute("num1");
     ...
@@ -920,6 +922,7 @@ Object getAttribute(String name) // 속성 참조
   `<%@ taglib (url="라이브러리 경로" or tagdir="테그 파일 경로") prefix="테그 접두어" %>
 
 - 테그 파일로 커스텀 테그를 구현한 예
+
 ```jsp
 <%@ taglib tagdir="/WEB-INF/tags" prefix="m" %>
 ...
