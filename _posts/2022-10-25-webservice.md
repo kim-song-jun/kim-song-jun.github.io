@@ -984,6 +984,7 @@ Object getAttribute(String name) // 속성 참조
   - 사칙연산, 메서드 호출, 변수 값 출력 등에 사용
     - 단, 웹 서버에서 연산 수행 후 그 결과만 웹 브라우저로 전송
   - EL로 대채 할 수 있음
+  
   ```jsp
   <h2>
     <%= member.getUserName() %>
@@ -1024,3 +1025,208 @@ Object getAttribute(String name) // 속성 참조
 - `out` 내장 변수는서블릿 클래스에서 `getWriter`를 호출해서 얻은 `PrintWirter` 객체와 동일한 역할 수행
 - 사용할 수 있는 이유는 웹 컨테이너가 JSP 페이지를 서블릿 클래스로 변환 할 때 자동으로 내장변수를 선언하기 때문
 
+
+# 나올만한 코드 정리
+
+```jsp
+<!-- form 태그 -->
+
+<!-- normal 한 form -->
+
+<form action="jspbook/adder">
+  first: <input type="text" name="num1">
+  second: <input type="text" name="num2">
+  <input type="sumbit" value="더하기">
+</form>
+
+<!-- select, option 사용 -->
+<from method="post" action="calc.jsp">
+  <input type="text" name="n1" size="10">
+  <select name="op">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+  </select>
+  <input type="text" name="n2" size="10">
+  <input type="submit" value="실행">
+</from>
+
+
+<!-- page 지시어-->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.util.*" errorPage="error.jsp" %>
+
+<!-- include 지시어 -->
+<%@ include file="파일 경로" %>
+
+<!-- taglib 지시어 -->
+<%@ taglib tagdir="경로" prefix="m" %>
+<m:printData/>
+
+<!--선언과 참조-->
+
+<%!
+  String[] members = {"1","2"};
+  int num1 = 10;
+
+  int calc(int num2){
+    return num1 + num2;
+  }
+%>
+
+<!--스크립트릿을 활용하여 메소드 호출-->
+
+<%= calc(10) %>
+
+
+<!-- 반복문 사용 -->
+
+<%
+  for (String name : members){ %> 
+    <li><%= name%></li>
+  <% 
+  }
+%>
+
+<!-- swith case 사용 -->
+<%@ page language="java" contentType="text/html; charset="UTF-8" pageEncoding="UTF-8" %>
+
+<%
+  int n1 = Integer.parseInt(request.getParameter("n1"));
+
+  swith(request.getParameter("op")){
+    case "+": result = n1+n2; break;
+  }
+%>
+
+<!--페이지 이동-->
+<!--데이터 포함-->
+<% 
+  request.setAttribute("member",m);
+  pageContext.forwared("userInfo.jsp");
+%>
+
+<!--데이터 미포함-->
+
+<% response.sendRedirect("main.jsp"); %> 
+
+<!--세션 생성-->
+
+<% 
+  session.setAttribute("userID", user_id);
+%>
+
+<!--세션 정보-->
+<%
+  Enumeration en = session.getAttributeNames();
+  String value = session.getAttribute(name).toString();
+%>
+
+<!--세션 삭제-->
+
+<% 
+  session.removeAttribute("memberID");
+  session.invalidate();
+%>
+
+<!--세션 유효시간 설정-->
+
+<%
+  int time = session.getMaxInactiveInterval() / 60;
+  session.setMaxInactiveInterval(60*60);
+
+  long last_time = session.getLastAccessedTime();
+  long start_time = seesion.getCreationTime();\
+  long used_time = (last_time - start_time) /60000;
+%>
+
+
+<!-- 쿠키 생성-->
+<%
+  Cookie cookie = new Cookie("memberID","admin");
+  response.addCookie(cookie);
+%>
+
+<!-- 쿠키 정보-->
+
+<%
+  Coocke[] cookies = request.getCookies();
+  cookies[i].getName();
+  cookies[i].getValue();
+%>
+
+<!--쿠키 삭제-->
+<%
+  cookie.setMaxAge(0);
+  response.addCookie(cookie);
+%>
+```
+
+```java
+
+// make servlet
+
+@WebServelt(description ="hello servlet", urlpatterns={"/hello"})
+public class HelloServlet extends HttpsServlet{
+  ...
+  protected void doGet(...){
+  };
+  protected void doPost(...);
+}
+
+
+// doGet Method
+
+protected void doGet(HttpServlet request, HttpServletResponse response) throws ServletException, IOException{
+
+  String str1 = request.getParameter("num1");
+  String str2 = request.getParameter("num2");
+
+  response.setContentType("text/html; charset=UTF-8");
+
+  PrintWriter out = response.getWriter();
+
+  try{
+    out.println("<html></html>");
+    out.append("<title></title>")
+  }
+
+}
+
+// init method overriding
+
+public void init() throws ServletException{
+  try{
+    logFile = new PrintWriter(new FileWriter("path"));
+  }catch(e){
+    throw new ServletException(e);
+  }
+}
+
+// destory method overriding
+
+public void destroy(){
+  if(logFile != null)
+    logFile.close();
+}
+
+// page 이동
+// 데이터를 포함하는 경우
+// by servlet
+
+doGet(...){
+  ...
+  request.setAttribute("member",m);
+  RequestDispatcher dispatcher = request.getRequestDispatcher("userInfo.jsp");
+  dispatcher.forward(request,response);
+}
+
+// by spring framwork
+@GetMapping("info")
+public String getMemberInfo(int id, Model model){
+  ...
+  model.addAttribute("member", m);
+  return "userInfo";
+}
+
+```
