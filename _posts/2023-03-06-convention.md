@@ -205,16 +205,16 @@ module.exports = {
 
 ## 3. extentions
 
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/0.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/1.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/2.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/3.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/4.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/5.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/6.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/7.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/8.png)
-![image](../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/9.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/0.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/1.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/3.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/4.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/2.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/5.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/6.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/7.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/8.png)
+![image](../../../images/../kim-song-jun.github.io/images/2023-03-06-convention.md/9.png)
 
 ---
 
